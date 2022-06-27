@@ -1,13 +1,23 @@
 # Pytorch - Deep Dream
-Minimal PyTorch implementation of Deep Dream.
+A basic PyTorch implementation of Deep Dream.
+All credits go to 
 
 ## Examples
-`$ python3 deep_dream.py --input_image images/supermarket.jpg`
-<p align="center">
-    <img src="outputs/output_supermarket.jpg" width="512"\>
-</p>
 
-`$ python3 deep_dream.py --input_image images/dog.jpg`
-<p align="center">
-    <img src="outputs/output_dog.jpg" width="512"\>
-</p>
+Training a new model, assuming dataset has the following structure:
+
+dataset
+  |-Label1
+  |---Image 1
+  |---Image 2
+  |-Label2
+  |---Image 1
+  |---Image 2
+
+```bash
+$ python deep_dream.py train --model-name vgg16 --dataset-path dataset
+```
+
+```
+$ python3 deep_dream.py dream
+```

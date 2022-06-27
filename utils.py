@@ -1,12 +1,13 @@
 import numpy as np
 import torch
 from torchvision import transforms
+from functools import partial
 
 mean = np.array([0.485, 0.456, 0.406])
 std = np.array([0.229, 0.224, 0.225])
 
 preprocess = transforms.Compose(
-    [transforms.ToTensor(), transforms.Normalize(mean, std)]
+    [transforms.ToTensor(), transforms.Normalize(mean, std), partial(torch.unsqueeze, dim=0)]
 )
 
 
